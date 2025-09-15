@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,400;1,700&family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
 
    /* Add this line */
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  --font-oxanium: 'Oxanium', sans-serif;
+  --font-iceland: 'Iceland', cursive;
+}  
 html{
   scroll-behavior: smooth;
 }

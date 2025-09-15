@@ -5,7 +5,8 @@ import fingerprint from './assets/images/fingerprint.gif';
 import globe from './assets/images/globe.gif';
 import terminal from './assets/images/terminal.gif';
 import AnimateOnLoad from './components/fade';
-import Project from './components/ProjectSection';
+import NotJustChillar from './components/NotJustChiller';
+import SafeChoice from './components/SafeChoice';
 import Footer from './components/Footer';
 
 
@@ -21,10 +22,16 @@ const App = () => {
         transitionClasses="transition-all duration-700 ease-out">
       <NavBar/>
       </AnimateOnLoad>
+
+      
       
       <div className='pt-[28px]'>
+        <section id='home'>
       <Hero/>
+       </section>
       </div>
+
+     
 
         <img
         src={fingerprint}
@@ -53,9 +60,16 @@ const App = () => {
       <div className='absolute top-3/5 left-1/8 w-[120px] h-[50px] border-2 boreder-[#fff] rounded-[20px] flex items-center justify-center  '>
         <p className="text-[#0C6B2C] font-vt text-center text-[24px]">Developer</p>
       </div>
+      
 
       {/* Projects Section */}
-      <Project/>
+      <section id="projects">
+      <NotJustChillar/>
+      </section>
+
+      <SafeChoice/>
+
+      <Footer/>
     </div>
   )
 }
