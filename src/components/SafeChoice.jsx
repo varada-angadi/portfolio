@@ -60,7 +60,14 @@ const SafeChoice = () => {
           style={{ backgroundColor: 'black', borderColor: 'white' }}
         >
           <p className="text-[#0C6B2C] font-poppins text-center font-bold text-[32px]">
-            GitHub
+            <a
+        href="https://github.com/varada-angadi/SafeChoice"
+        className="hover:text-[#8DA563] transition-colors"
+        style={{color:"#0C6B2C",textDecoration: "none" }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
+            
           </p>
         </button>
       </div>

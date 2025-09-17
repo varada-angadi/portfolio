@@ -69,8 +69,15 @@ const NotJustChillar = () => {
   className='absolute bottom-[-15px] w-[150px] h-[50px] border-2 rounded-[20px] flex items-center justify-center'
   style={{ backgroundColor: 'black', borderColor: 'white' }}
 >
-  <p className="text-[#0C6B2C] font-poppins text-center font-bold text-[32px]">
-    GitHub
+  <p className="font-poppins text-center font-bold text-[32px]">
+    <a
+        href="https://github.com/varada-angadi/NotJustChiller"
+        className="hover:text-[#8DA563] transition-colors"
+        style={{color:"#0C6B2C", textDecoration: "none" }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
+    
   </p>
 </button>
 </div>
