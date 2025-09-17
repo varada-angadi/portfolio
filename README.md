@@ -15,7 +15,7 @@ SafeChoice - Carcinogens Risk Awareness Platform (React, TailwindCSS, Node.js, M
 
 # Setup & Installation <br/>
 ### Clone the repo <br/>
-git clone https://github.com/<your-username>/<your-portfolio-repo>.git <br/>
+git clone https://github.com/varada-angadi/portfolio.git <br/>
 
 ### Navigate into the folder <br/>
 cd portfolio <br/>
