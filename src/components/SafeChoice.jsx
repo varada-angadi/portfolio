@@ -1,76 +1,77 @@
 import React, { useState } from 'react';
 
 const SafeChoice = () => {
-  const [isJustVideo, setJustVideo] = useState(false);
   const overlayVideo = "/videos/scOverlay.mp4";      // initial video with overlay
   const fullScreenVideo = "/videos/SafeChoice.mp4"; 
+
+  // Var that tracks demo playing or not
+    const [isJustVideo, setJustVideo] = useState(false);
+  
+    // Var that tracks if the video loaded or not
+    const [videoLoaded, setVideoLoaded] = useState(false);
 
   const handleToggle = () => {
     setJustVideo(!isJustVideo);
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden" onClick={handleToggle}>
-      
-      {/* Video */}
+    <div className="relative w-full h-[calc(100vh+20px)] flex justify-center items-center overflow-hidden" onClick={handleToggle}>
+      {/*Project Video */}
       <video
         src={isJustVideo ? fullScreenVideo : overlayVideo}
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500
+        onLoadedData={() => setVideoLoaded(true)}
+        poster="/images/scPoster.png"
+        className={`transition-all duration-500
           ${isJustVideo
             ? 'max-w-[90%] max-h-[90%] object-contain z-10'
             : 'min-w-full min-h-full object-cover z-10'}`}
         style={!isJustVideo ? { filter: 'brightness(0.6)' } : {}}
-        loop
-        muted
-        autoPlay
-        playsInline
-      />
+        loop muted autoPlay playsInline/>
 
-      {/* Exit / Demo Images */}
-      <img
-        src="/images/exit.png"
-        alt="Click to exit"
-        className={`absolute left-[100px] top-[150px] w-[250px] h-[270px] z-30 transition-opacity duration-300
-          ${isJustVideo ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-      />
+      {/* Loading element */}
+        {!videoLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-white text-3xl sm:text-4xl md:text-5xl font-poppins">Loading video...</p>
+        </div> )}
 
-      <img
-        src="/images/demo.png"
-        alt="Click to watch demo"
-        className={`absolute right-[100px] top-[150px] w-[200px] h-[220px] z-30 transition-opacity duration-300
-          ${!isJustVideo ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-      />
+        {/* Click hint to exit demo */}
+        {isJustVideo && (
+          <img src="/images/exit.png" alt="Click to exit" className="absolute left-[5%] top-[15%] w-[150px] sm:w-[180px] md:w-[250px] z-30"/>)}
 
-      {/* Project Logo */}
-      <img
-        src='/images/sc.png'
-        className={`absolute left-[30px] bottom-[155px] w-[186px] h-[40px] z-30 transition-opacity duration-300
-          ${!isJustVideo ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-      />
+        {/* Click hint to watch demo */}
+        {!isJustVideo && (
+          <img src="/images/demo.png" alt="Click to watch demo" className="absolute right-[5%] top-[15%] w-[150px] sm:w-[180px] md:w-[250px] h-auto z-30"></img>)}
 
-      {/* Project Title & GitHub */}
-      <div className={`absolute bottom-[52px] left-[30px] z-20 flex flex-col transition-opacity duration-300
-          ${!isJustVideo ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <p className='font-poppins text-[50px] font-bold leading-[1.1]'>
-          SafeChoice - Carcinogens Risk Awareness Platform
-        </p>
+          {/* Text overlay at bottom-left */}
+        {!isJustVideo && (
+        <>
+          {/* Project Logo */}
+          <img src='/images/sc.png'
+            className="absolute bottom-[17%] sm:bottom-[21%] md:bottom-[21%] left-[2%] 
+            w-[186px] h-[40px] z-20"/>
+          
+          {/* Project Title & GitHub */}
+          <div className="absolute bottom-[5%] left-[2%] items-start z-20 flex flex-col space-y-[16px]" >
+            <p className='text-2xl sm:text-3xl md:text-5xl font-bold leading-[1.1]'>
+              SafeChoice - Carcinogens Risk Awareness Platform
+            </p>
 
-        <button
-          className='absolute bottom-[-15px] w-[150px] h-[50px] border-2 rounded-[20px] flex items-center justify-center'
-          style={{ backgroundColor: 'black', borderColor: 'white' }}
-        >
-          <p className="text-[#0C6B2C] font-poppins text-center font-bold text-[32px]">
-            <a
-        href="https://github.com/varada-angadi/SafeChoice"
-        className="hover:text-[#8DA563] transition-colors"
-        style={{color:"#0C6B2C",textDecoration: "none" }}
-        target="_blank"
-        rel="noopener noreferrer"
-      >GitHub</a>
-            
+          {/* Gitbut Link Button */}
+          <button className='w-[120px] h-[40px] sm:w-[150px] sm:h-[50px] md:w-[150px] md:h-[50px] border-2 rounded-[20px] flex items-center justify-center'
+            style={{ backgroundColor: 'black', borderColor: 'white' }}>
+            <p className="text-center font-bold text-2xl sm:text-3xl md:text-4xl">
+            <a href="https://github.com/varada-angadi/SafeChoice"
+              className="hover:text-[#8DA563] transition-colors"
+              style={{color:"#0C6B2C",textDecoration: "none" }}
+              target="_blank"
+              rel="noopener noreferrer">
+                GitHub
+            </a> 
           </p>
         </button>
+
       </div>
+      </>)}
     </div>
   );
 };

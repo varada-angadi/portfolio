@@ -1,65 +1,53 @@
 // src/components/Footer.jsx
 import React from "react";
-import { FaGithub, FaLinkedin, FaDownload, FaArrowUp} from "react-icons/fa";
+import { FaGithub, FaLinkedin} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { LuFileText } from "react-icons/lu";
 
 export default function Footer() {
 
-  const scrollToTop = () => {
-  window.scrollTo({
-    top: 0, // or a little negative to account for navbar
-    behavior: "smooth"
-  });
-}; 
   return (
-    <footer className="text-center" style={{paddingTop:"40px",paddingBottom:"0px"}}>
-     <img src="/images/logo.png" className="w-[80px] h-[60px] " />
-     <p className="font-poppins text-2xl font-bold leading-[1.1] pb-8">Reach out — I’d love to hear from you!</p>
+    <footer className="text-center font-poppins mt-6 mb-6">
+     <p className="text-xl md:text-3xl lg:text-3xl leading-[50px] md:leading-[60px] lg:leading-[80px]">Thanks for scrolling</p>
+     <p className="text-xl sm:text-2xl md:text-4xl font-bold pb-6">Reach out — I’d love to hear from you!</p>
 
-
-  <div className="flex justify-center gap-8 items-center" style={{gap:"30px"}}>
+    <div className="flex justify-center gap-8 items-center pb-6">
       {/* Email */}
       <a
         href="https://mail.google.com/mail/?view=cm&fs=1&to=varadaangadi203@gmail.com" 
-        className="font-oxanium text-xl font-bold leading-[1.1] no-underline " 
         style={{color: "white", textDecoration: "none" }}
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        <MdEmail className="w-[32px] h-[32px]"/>
+        rel="noopener noreferrer">
+        <MdEmail className="w-8 md:w-8 lg:w-12 h-8 md:h-8 lg:h-12"/>
       </a>
 
       {/* GitHub */}
       <a
         href="https://github.com/varada-angadi"
-        className="text-white text-3xl hover:text-[#8DA563] transition-colors"
         style={{color: "white", textDecoration: "none" }}
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaGithub className="w-[32px] h-[32px]"/>
+        rel="noopener noreferrer">
+        <FaGithub className="w-8 md:w-8 lg:w-12 h-8 md:h-8 lg:h-12"/>
       </a>
 
       {/* LinkedIn */}
       <a
         href="https://www.linkedin.com/in/varada-angadi"
-        className="text-white text-3xl hover:text-[#8DA563] transition-colors"
         style={{color: "white", textDecoration: "none" }}
         target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaLinkedin className="w-[32px] h-[32px]"/>
+        rel="noopener noreferrer">
+        <FaLinkedin className="w-8 md:w-8 lg:w-12 h-8 md:h-8 lg:h-12"/>
       </a>
-    </div>
 
-    <div className="relative flex items-center justify-between px-[4px]">
+      {/* LinkedIn */}
+      <a
+        href="/files/VaradaAngadi_Resume.pdf"
+        style={{color: "white", textDecoration: "none" }}
+        target="_blank"
+        rel="noopener noreferrer">
+        <LuFileText  className="w-8 md:w-8 lg:w-12 h-8 md:h-8 lg:h-12"/>
+      </a>
 
-  <p onClick={scrollToTop}  className="cursor-pointer font-oxanium text-sm font-bold leading-[2]" style={{color: "white", textDecoration: "none" }}>
-    <FaArrowUp className="w-[12px] h-[12px] px-[10px]"/>Back To Top</p>
-      
-      <a href="/files/VaradaAngadi_Resume.pdf"  target="_blank" rel="noopener noreferrer" 
-      className="font-oxanium text-sm font-bold leading-[2]" style={{color: "white", textDecoration: "none" }}>
-        <FaDownload className="w-[12px] h-[12px] px-[10px]"/>Resume</a>
     </div>
 
     </footer>

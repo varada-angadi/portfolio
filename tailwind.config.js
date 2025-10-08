@@ -8,8 +8,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        vt: ['VT323', 'monospace'],
+        poppins: ['Poppins', 'sans-serif'],
+        oxanium: ['Oxanium', 'sans-serif'],
+        vt: ['VT323', 'monospace']
+
       },
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
     },
   },
   plugins: [],

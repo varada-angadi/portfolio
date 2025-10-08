@@ -10,8 +10,8 @@ Styling: TailwindCSS <br/>
 Hosting: Vercel <br/>
 
 # Projects Highlighted: <br/>
-NotJustChillar - Student Expense Tracker App<br/>
-SafeChoice - Carcinogens Risk Awareness Platform<br/>
+NotJustChillar - Student Expense Tracker App (React Native, Firebase, CSS) <br/>
+SafeChoice - Carcinogens Risk Awareness Platform (React, TailwindCSS, Node.js, MongoDB) <br/>
 
 # Setup & Installation <br/>
 ### Clone the repo <br/>
@@ -29,8 +29,10 @@ npm run dev <br/>
 ### Build for production <br/>
 npm run build <br/>
 
-Contact <br/>
+# Contact <br/>
 Email: varadaangadi203@gmail.com <br/>
 LinkedIn: https://www.linkedin.com/in/varada-angadi <br/>
+GitHub: https://github.com/varada-angadi <br/>
+Portfolio: https://portfolio-varada-angadi.vercel.app/ <br/>
 
 Always open to collaborations, ideas, and opportunities!
