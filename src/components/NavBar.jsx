@@ -27,7 +27,7 @@ function NavBar(){
             {/*<a href="#" className="text-[#fff] hover:text-[#0c6b2c] visited:text-white transition duration-200 no-underline">BLOG</a>*/}
 
             {/* Resume */}
-            <a href="/files/VaradaAngadi_Resume.pdf"  target="_blank" rel="noopener noreferrer"
+            <a href="/VaradaAngadi_Resume.pdf"  target="_blank" rel="noopener noreferrer"
             className="text-[#fff] hover:text-[#0c6b2c] visited:text-white transition font-oxanium duration-200 no-underline">RESUME</a>
         </div>
       
